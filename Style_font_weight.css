@@ -1,0 +1,22 @@
+h1{
+               font-weight: lighter;/*font-weight: lighter or bolder is use in with respect to parent 
+               font-weight:value ranges b/w 100-900
+               font-weight:normal(normal is equivalent to 400)
+               */
+               text-decoration: maroon underline solid;
+}
+h2{
+               text-decoration:blue line-through wavy;
+}
+h3{
+               text-decoration:red overline dashed;
+}
+h4{
+               text-decoration: pink double underline;
+}
+h5{
+               text-decoration: rgba(128, 0, 0, 0.904) dotted line-through;/*text-dexoration: text-dexoration-color text-dexoration-style text-dexoration-line text-dexoration-thickness*/
+}
+a{
+               text-decoration: none ;
+}

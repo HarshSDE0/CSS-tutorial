@@ -1,0 +1,9 @@
+h1{
+               text-align: center;/*This property tells 
+               that particular element text-alignment
+                with respect to it's parent element
+               It's not an absolute value.
+               It's a relative value with respect to it's parent*/
+               border:solid;
+               width: 50%;
+}

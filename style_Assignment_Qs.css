@@ -1,0 +1,31 @@
+*{
+               font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+               text-align: center;
+               
+}
+p{
+               color: brown;
+               line-height:30px;
+}
+h1{
+               color: red;
+}
+a{
+               color: rgb(0,255,0);
+               text-decoration:none;
+}
+button{
+               background-color:white;
+               color:blueviolet;
+}
+/*hex code for black color is: #000000;
+
+*/
+textarea{
+               color: #000;
+}
+span{
+               text-decoration: underline;
+}

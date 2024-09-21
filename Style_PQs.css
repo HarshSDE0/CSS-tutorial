@@ -1,0 +1,12 @@
+h1{
+               text-align:center;
+               font-family: league spartan;
+               color:#ffa511;
+               font-size: 55px;
+               font-weight:900;
+               letter-spacing:2px;
+               line-height: 1.5;
+               text-decoration:teal double underline;
+               /*The text-transform CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized.*/
+               text-transform: uppercase;
+}

@@ -1,0 +1,16 @@
+h1{
+               text-align: center;
+               letter-spacing: 5px;/*this property helps with sapce b/w two letters. mainly used in making logos where space b/w letters are reqd*/
+               text-decoration: maroon solid underline;
+               font-size:50px;
+               /*font-size: it is the propery which modifies the size of text(headings, paragraph, etc) */
+}
+p{
+               font-weight: 400;
+               text-align: justify;
+               line-height: 1.5;
+               letter-spacing:  2px;
+               font-size: 16px;
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*font-size: it is the propery which modifies the size of text(headings, paragraph, etc) */
