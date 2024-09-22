@@ -1,0 +1,223 @@
+/*Universal selector is used to select and apply style to whole document*/
+/*Remember when specificity gets same then
+ check with cacading property*/
+/*The !important rule in CSS is used to add more
+ importance to a property/value than normal.
+used sometimes
+In fact, if you use the !important rule, 
+it will override ALL previous styling rules for that 
+specific property on that element! 
+and cannot be overriden by selector with higher specificity.*/
+h3{
+  background-color: antiquewhite !important;
+}
+*{
+               font-family: 'Courier New';
+}
+
+/*Element selector: if we wish to apply same set of properties for several elements then we can do it by separating the names of elements with the help of comma*/
+h1,h3{
+               color: #b92b27;
+}
+/*id selector and class selector is a case sensetive 
+Uses: It is used to uniquely apply style to particular element by using ID of the element 
+in this case style is only applicable to those element which have that id*/
+#login{
+               background-color: white;
+}
+#signup{
+               background-color: #b92b27;
+               color: white;
+}
+/*class selector: select all those element based on the same value of class attribute
+ no matter which elements are there only the required thing is to have same class attribute value*/
+.upvote{
+               background-color: green;
+               color: white;
+}
+/*descendant selector: agar ham kisi aise element ko select krna chahte hai jo
+ bahut baar appear ho raha ho. lekin har baar alag alag ancestor ke andar ho 
+ th particular ancestor wale par lgane k liy descendant selector ka use hota hai 
+ jaise hmey ush PARAGRAPH TAG PaR PROPERtY LAGAN HAI JO  DIV K ANDAR HAI TH HAMLOG 
+ descendant selector
+  KA USE KRENGE
+  It is always advisable to use ancestor element as descendant selector use it's
+  class name */
+.post a{
+               color: rgb(50, 165, 11);
+               background-color: yellow;
+
+}
+nav ul li{    /*It can also be written as : nav li*/
+               color: hotpink;
+}
+nav ul li a{  /*It can also be written as : nav a*/
+               color: purple;
+}
+/*Adjacent-SIBLING_COMBINATOR::
+The adjacent sibling selector is used to select an element 
+that is immediately after another specific element.
+
+Sibling elements must have the same parent element, 
+and "adjacent" means "immediately following".
+
+multiple selectors can be combined using combinators
+E.G: Heading3 that comes immediately after any paragraph
+p+h3{
+               property : value;
+} 
+where p and h3 are elements .
+when we use + symbol in b/w means we are slecting all those h3 which
+ are immediately after p 
+ this is applicable on first h3 after p
+ i.e;
+ <p></p>
+ <h3></h3>(property will only be applicable to this )
+ <h3></h3>
+<!---here second h3 will not get selected , properties will only be applied to 
+1st h3 i.e; immediate after paragraph 
+note: here, h3 and p are at same level hence they are called sibling relation
+so, we use '+' sign for combining them-->
+
+/*A combinator is something that explains the
+ relationship between the selectors.
+ There are four different combinators in CSS:
+
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)*/
+ 
+ p+h3{
+               text-decoration:  black solid underline;
+ }
+ .upvote+button{
+               /*this button will come immediately after upvote button*/
+               background-color: cornflowerblue;
+               color: darkblue;
+ }
+ /*Child combinator:
+  1. used b/w two selectors when we wish to set child relation 
+  2. for eastablishing child relation, the child element must be 
+  direct descendant of parent .
+  i.e; if we have hierachy as div->p->ul->li
+    here, if we select div as parent then it's direct descendant is 'p' 
+    not other elements are considerd to be it's direct descendant 
+    and hence the style will only be applicable to 
+    direct child ( direct descendant ) not all indirect descendant
+      incase we use child combinator
+      Noteable difference between child combinator and descendant selector:
+          div->p->section->ul->p->p->li
+          In CSS, a child selector only targets elements that are immediate 
+          children of a specified element, 
+          while a descendant selector
+          targets all elements that are descendants of a specified element
+          For example, div > p selects all p elements that are direct children of a 
+          div element, while (div p) selects all p elements inside div elements
+
+ */
+ 
+  div > input{
+    background-color: darkgray;
+  }
+
+
+  /*Attribute Selector
+  selects elements based on the presence or value of a given attribute
+  e.g:
+  input[attr = "value"]{
+    property : value;
+  }
+  */
+  input[type = "text"]{
+    color: red;
+  }
+  input[type="password"] {
+    color: green;
+  }
+
+  input[type] {
+    background-color: ghostwhite;
+  }
+
+  #myId p{/*can also be written as : div[id="myId"] p{ color:green;     }*/
+               color: green;
+}
+/*Pseudo class
+There are many more pseudo classes (Google it. e.g: disabled btns on 
+clicking on apage becomes grey)
+A keyword added to a selector that specifies a special state 
+of the selected element to apply css on that element when that 
+particular state is achived. some are:
+:hover
+:active
+:checked
+:nth-of-type()
+*/
+button:hover{
+  background-color: black;
+  color: white;
+}
+/*specificity is property or algorithm in css which tells about 
+the priority of selectors to apply the style on elements with the help of css*/
+h3:hover{
+  text-decoration: overline;
+}
+
+/*:active this pseudo class applies css to element when that element is clicked*/
+button:active{
+  background-color: hotpink;
+  font-weight: bold;
+}
+p:active{
+  font-weight: bold;
+  color: green;
+}
+input[type="radio"]:checked+label{/*This way of wrotting CSS means 
+  jaise hi radio btn check ho jayega uske baad hi ush radio ke label mei 
+  changes apply honge*/
+  color: red;
+  font-weight: bold;
+}
+/*:nth-of type() pseudo class is used to select nth element in particular 
+sequence of elements. It basically applies properties on the basis of 
+calculation of position of elements*/
+.post:nth-of-type(2n){
+  background-color: blanchedalmond;
+}
+/*PSEUDO ELEMENTS
+A keyword added to a selector that lets you style a specific part of the 
+selected elements. Some Pseudo elements are as follows
+::first-letter - it is visible over the first letter of selected elements.
+::first-line - it is visible when we select the first line of selected elements.
+::selection - it is visible when we select the parts of selected elements.
+*/
+h1::first-letter{
+  color: green;
+}
+p::first-line{
+  color: rgb(200, 0, 0);
+}
+p::selection{
+  background-color: palegoldenrod;
+}
+/*if selectors are same then as per cascade algo it states that the 
+last declared CSS will be considerd 
+& in case if there are many CSS files then last linked file will be
+considered for it's property
+OR
+if  different selectors for same element are being used to modify the same property 
+again & again then on the basis of specificity algo it will be decided which declared 
+CSS will be applicable for particular element
+Specificity Algorithm :In this we calculate 3 digit number
+1. Internal stylesheet (0)
+2. ID's in the selector (1
+3. Classes, attributes and pseudoclass
+4. Element names, pseudo element
+5. The universal (*) selector 
+order: Internal CSS > ID > Class, pseudo class & attribute> Element And 
+pseudo element 
+NOTE if specificity gets same then apply cascading algorithm*/
+
+
+
