@@ -1,0 +1,97 @@
+/*There are two kinds of elements
+Block and inline elements*/
+
+/*Block Elements
+Takes up the full-width available
+ans always starts from new line
+isme margin height width padding saare propeerties work krti hai
+*/
+
+/*
+Inline Elements
+Takes up only the width of the content as 
+much required not the whole screen width
+Don't starts from new line
+1. ish type k elements ke liye height & width properties work nii krti hai
+2. padding works on all direction , but top and bottom may overlap with other elements
+3. Margin sirf horizontal direction mei work krti hai vertical mei nahi
+*/
+
+/*display property
+CSS ke help se hamlog ye determine kr skte hai ki konsa 
+element block element ki trh treat kiya jayega 
+ya
+konsa element inline element ki trh treat kiya jayega
+and this property also determines
+  the layout used for it's children
+There are many possible values for display(For knowing more refer to MDN). 
+some are:
+  display: inline;( it makes the element an inline element regardless of it being a
+                   block element or inline element)
+  display: block;( it makes the element an block element regardless of it being a
+                   block element or inline element)
+  display : inline-block (Ish property ko use krke ham  element ko
+                       inline behaviour de skte hai( jaise ki same line se start
+                        hona.....
+                        jitna space chahiye content ko utna hi consume krna pura width
+                        nahi lena) aur jo bhi style apply hoga wh as per block
+                        element ke rules hoga)
+                        matlab ki uspr height width margin padding ki jo behaviour hogi 
+                        wh saari block elements wali hogi )
+
+  display:none      (this property hides the particular element)
+*/
+
+/*
+IMP LINK (To know about inline and block elements)
+https://www.apnacollege.in/path-player?courseid=delta-batch-2&unit=650060efa0a61b15770185bbUnit
+*/
+h2{
+               display: inline;
+               background-color: pink;
+}
+span{
+               display : block;
+               background-color: rgba(111, 243, 255, 0.626);
+
+}
+/*test for the working of height , width, margin and padding for the inline elements*/
+
+#span_check{
+               display: inline;
+               border: 2px solid black;
+               height: 200px;/*In inline elemrnts Height and width properties
+               do not work*/
+               width: 500px;
+               padding:50px;/*Works in all direction but overlaps with other elements
+               at top and bottom*/
+               margin: 20px;/*works horizontally not vertically*/
+}
+/*test for the working of height , width, margin and padding for the block elements*/
+p{
+               display: block;
+               border: 2px solid black;
+               height: 200px;
+               width: 500px;
+               padding:50px;
+               margin: 20px;
+}
+
+.div_block{
+  width: 200px;
+  height: 200px;
+  background-color: orchid;
+  border: 2px solid black;
+  margin: 10px;
+  display: inline-block;
+}
+/*  display:none      (this property hides the particular element)
+ */
+
+#forth_div{
+  display: none;
+}
+/*NOTE: we can change the unordered list bullets points into 
+images by using the list-style-image property.
+also we can change the bullet points to numbers letters or any other symbols using
+list-style-type*/

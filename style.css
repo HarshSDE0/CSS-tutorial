@@ -1,0 +1,158 @@
+/*har element kisi bhi web page par ek box k form mei appear hota hai
+aur ush box mei hmesha content ka width aur height hota hai
+
+note:
+we always set height and width of content not of the whole element 
+e.g: if we have div as element then we can only set height and width of it's content part 
+not for the whole element 
+content(blue area in dev tool)*/
+
+/*
+Border is not set for the content of the element 
+it is always for the element (outermost boundary)
+Border has many parameters which can be changed. Some are:
+border-width
+border-style
+border-color,etc
+NOTE: border make things more attractive
+*/
+
+/*We can control an individual border sides of the box for every element
+by using the following : 
+border-left-width
+border-left-style
+border-left-color
+
+border-right-width
+border-right-style
+border-right-color
+
+border-top-width
+border-top-style
+border-top-color
+
+border-bottom-width
+border-bottom-style
+border-bottom-color
+
+We can use shorthands also for the above :
+border-top :border-width border-style border-color;
+
+border-right :border-width border-style border-color;
+
+border-bottom :border-width border-style border-color;
+
+border-left :border-width border-style border-color;
+
+
+border-radius :
+ 
+isko property ko use karke ham apne elements ke borders ke edges ko
+round shape mei kar sakte hai
+
+other words
+used to round the corners of an element's outer border edge
+
+this is used for buttons to give curved edges
+
+NOTE if we give border-radius:50% then the element box will gets 
+converted to circle shape or oval circle
+for circle ensure that element's height and width size must be same.
+
+/*We can control an individual border sides of the box for every element
+by using the following : 
+
+border-top-right-radius
+border-top-left-radius
+border-bottom-right-radius
+border-bottom-left-radius
+
+*/
+
+div{
+               height:150px;
+               width: 550px;
+               background-color: pink;
+                border-width: 5px;
+               border-style: solid;
+               border-color: black;
+             /*  border-left-width: 5px;
+               border-left-style: dashed;
+               border-left-color:blue; */
+               border-radius: 15px;
+
+}
+/*Shorthand
+border: border-width border-style border-color*/
+h1{
+               border: 2px dashed purple;
+
+              
+}
+/*Padding (green area in dev tool)
+space b/w element outer boundary and content
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+for giving oval shape
+give padding in left and right
+
+four shorthands :
+1. For all 4 sides
+ padding: 10px ;
+2. top & bottom | left and right
+ padding : 20px 30px;
+ 3. top | left & right |  bottom 
+ padding : 20px 30px 40px;
+ 4. top | right | bottom | left    (clockwise )
+ padding : 20px 30px 40px 50px;
+
+
+ if we do-not want padding b/w content and boundary then set it to 0 for
+ individual side
+
+*/
+button{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-left:25px;
+  padding-right: 25px;
+  background-color: yellow;
+}
+div{
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-bottom: 50px;
+  padding-right: 20px;
+}
+
+/*
+ Margin property (orange are on dev tools)
+ it sets the space between the outside of borders of two elements
+
+ margin-top
+ margin-right
+ margin-bottom
+ margin-top
+
+ shorthand 
+ 1. For all 4 sides
+ margin: 10px ;
+ 2. top & bottom | left and right
+ margin : 20px 30px;
+ 3. top | left & right |  bottom
+ margin : 20px 30px 40px;
+ 4. top | right | bottom | left    (clockwise )
+ margin : 20px 30px 40px 50px;
+
+ heading do have the default margin (previously present )
+
+
+*/
+
+
+div{
+  margin-bottom: 25px;
+}
