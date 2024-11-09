@@ -1,0 +1,173 @@
+/*Position property
+hmey ye btati hai ki particular element ka kya position honey wala hai purey 
+document mei
+Position CSS property sets how an element is positioned in a document
+there are 4 positions
+1) static
+2) relative
+3) absolute
+4) fixed
+--------------------------------------------------------------
+to manipulate the position of the  element we use
+1) top(agar ham chahte hai ki element ko top side se position dena hai 
+               toh ye use krenge ish case mei element ke upar top se force lgega
+               aur element niche ki trf move krega)
+2) right(agar ham chahte hai ki element ko right side se position dena hai 
+               toh ye use krenge ish case mei element ke upar right se force lgega
+               aur element left ki trf move krega)
+3) bottom(agar ham chahte hai ki element ko bottom side se position dena hai 
+               toh ye use krenge ish case mei element ke upar bottom se force lgega
+               aur element upar ki trf move krega)
+4) left(agar ham chahte hai ki element ko left side se position dena hai 
+               toh ye use krenge ish case mei element ke upar left se force lgega
+               aur element right ki trf move krega)
+properties determine the final location of positioned elements
+
+
+If we set 
+position : static(ish case mei particular element jahan tha wahi dikhega)
+this is default value(agar ham kisi element k liy position property 
+nahi define kiyanhai th by default wh static hota hai)
+in this we cannot manipulate the position property by using 
+1) top
+2) right
+3) bottom
+4) left
+
+
+
+IF we set
+position : relative
+ye property element ka khud ke current location ke respect mei kaam krta hai
+in this case the
+"offset(top, right, bottom, left) 
+is relative to itself" (means from center point of that particular element)
+based on the values of top, right, bottom, left the element will 
+move from the center point of the element
+top /*(agar ham chahte hai ki element ko top side se position dena hai 
+               toh ye use krenge ish case mei element ke upar top se force lgega
+               aur element niche ki trf move krega with respect to center point 
+               of the element itself)
+               
+left      (agar ham chahte hai ki element ko left side se position dena hai 
+               toh ye use krenge ish case mei element ke upar left se force lgega
+               aur element right ki trf move krega with respect to center point 
+               of the element itself)
+ bottom(agar ham chahte hai ki element ko bottom side se position dena hai 
+               toh ye use krenge ish case mei element ke upar bottom se force lgega
+               aur element upar ki trf move krega  with respect to center point 
+               of the element itself)              
+right(agar ham chahte hai ki element ko right side se position dena hai 
+               toh ye use krenge ish case mei element ke upar right se force lgega
+               aur element left ki trf move krega with respect to center point 
+               of the element itself)
+               
+
+
+
+
+
+
+position : absolute
+The element is removed from the normal document flow
+and no space is created for the element in the page layout.
+Element is positioned "relative to its closest positioned ancestor"(means koi bhi 
+aisa ancestor for e.g; parent ya parent ke upar wale hierarchy mei aisa element
+jisko hamne position property de rkhi ho lekin position property ki value static 
+nahi honi chchiye agr aisa koi element hai th uske repect mei set hoga ya phir 
+initial containg-block hai uske relative mei set ho jayega
+), if any; otherwise it is placed relative to the initial containg block
+IF INITIAL CONTAINING BLOCK IS THE WHOLE DOCUMENT I.E; BODY
+THEN THE CENTER POINT  OF THE DOCUMENT WILL BE THE LEFT TOP-MOST CORNER OF THE DOCUMENT
+WITH RESPECT TO WHICH ALL PROPERTY WILL BE APPLICABLE
+               this property is used to position the element with respect to the
+               nearest positioned ancestor element
+               (means if we have a div element and we want to position the
+               child element of that div element with respect to that div element
+               then we can use this property )
+               in this case the
+               "offset(top, right, bottom, left)
+               is relative to the nearest positioned ancestor element"
+               based on the values of top, right, bottom, left the element will
+               move from the center point of the nearest positioned ancestor element
+               top /*(agar ham chahte hai ki element ko top side se position dena hai
+               toh ye use krenge ish case mei element ke upar top se force lgega
+               aur element niche ki trf move krega with respect to center point of
+               the nearest positioned ancestor element itself)
+
+
+position : fixed
+
+The element is removed from the normal document flow
+and no space is created for the element in the page layout.
+The element is positioned relative to the initial containg block established by the viewport
+except when one of it's ancestors have following properties
+1) transform
+2) perspective 
+3) filter
+whose values are set to something other than one in such case ancestor will behave as
+containg block and the this property will work with respect to that particular ancestor
+
+
+jis element ki position: fixed hoti hai wh pure webpage par fixed hoti hai apne jgh par
+rehti hai phir page scroll bhi krenge th wh apne jgh par fixed dikhai deti hai 
+hilti nii hai
+
+ish property ko use krke ham nav baar bna skte hai
+e.g: jab bhi ham kisi bhi topic ke wikepidea wale page par visit krenge th 
+ hmko hmesha left side mei navigation bar milga wh hmesha apni jgh par dikhta
+ hai phir ham pura page kitna bhi scroll kar lein
+
+               */
+
+
+
+div{
+               height: 100px;
+               width: 100px;
+               background-color: green;
+               text-align : center;
+               border:3px solid black;
+               margin:20px;
+               display: inline-block;
+}
+#static{
+               background-color: yellow;
+               position: static;
+               top: 200px;/*these left and top property will not be able to manipulate
+                              the position because when position property set to
+                              static then it avoids manipulation of position using 
+                              top bottom up left */
+               left: 600px;
+
+}
+
+#relative{
+               background-color: yellow;
+               position: relative;
+               top: 100px;/*(agar ham chahte hai ki element ko top side se position dena hai 
+               toh ye use krenge ish case mei element ke upar top se force lgega
+               aur element niche ki trf move krega with respect to center point 
+               of the element itself)*/
+               left: 100px; /*(agar ham chahte hai ki element ko left side se position dena hai 
+               toh ye use krenge ish case mei element ke upar left se force lgega
+               aur element right ki trf move krega with respect to center point 
+               of the element itself)*/
+}
+
+#absolute{
+               background-color: rgb(144, 220, 172);
+               position: absolute;   
+               top: 100px;
+               left:100px;
+}
+/*yahan par absolute property jis div k liy set kar rhe hai uska position 
+uske parent element(section ) ke respect mei set nii hoga kyuki uska position property ka value static hai, uska property with respect to
+body jo ki initial containing block hai uske center point ke repect mei set hog
+*/
+#fixed{
+               background-color: rgb(220, 220, 172);
+               position: fixed;   
+               top: 100px;
+               left:100px;   
+}

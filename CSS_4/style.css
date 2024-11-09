@@ -1,0 +1,117 @@
+/*Something additional
+
+one of the way by which we can set color for any element is
+color: rgb(0-255,0-255,0-255)
+now, something additional we can determine is amount of visibilty of a color
+through using alpha channel i.e; 'a' in 'rgba' 
+color: rgba(0-255,0-255,0-255,0-1)
+alpha channel sets the opacity of color or say visiblity of a color
+It's value ranges b/w 0-1 (we can use decimal values)
+in above values
+0 means color is not visible(i.e; hidden)
+1 means color is fully visible
+red, green and blue color have the values in range of 0-255
+
+this can be writen in hexadecimal form too
+
+after 6 decimal places we can add two more at end as 00-ff
+ 00 means completely hidden
+ ff means completely visible
+*/
+div{
+        height: 200px;       
+        width: 200px;
+        background-color: rgba(77, 255, 0, 0.28);/*hex code for same #4dff0047*/
+        display:inline-block;
+}
+
+/*Opacity
+Sets the opacity for the complete element(includes whatever inside it ) or 
+visibility of  complete element(includes whatever inside it ) not color
+it's value ranges b/w 0-1
+0 means element is not visible(i.e; hidden)
+1 means element is fully visible
+*/
+#opacity{
+               background-color: #ffa511;
+               opacity: 0.5;
+}
+/*Transition
+Enables us to define the transition b/w two states of an element
+
+Ek state se dusre state of element mei janey tak ke safar ko transition bolte hai
+ish transition k time ham kuch property de skte hai
+jaise ki
+transition-property (which property of element should change while transition )
+               
+
+transition-duration (Ek state se dusre state of same element janey mei 
+                              kitna time lgna chahiye)
+transition-timing-function (kis tarike se state change ho rhi hai flow of change in state)
+
+transition-delay (state ko kuch delay k baad change krane k liy or we can also set
+it as to change in state should be immediately
+It is basically about
+kitne (delay ke sath ) time baad state mei change hona chahiye
+)
+
+shape mei change lana 
+background color mei change lana 
+change in text property, etc
+
+It is basically about
+jab koi element ek state se dusre state mei jata hai
+to uske bich ke safar ko transition bolte hai
+
+for this we define 2 states of elements by writting CSS properties
+
+NOTE : Transition property is defined inside initial state of element
+
+It helps in giving fade in fade out effect
+*/
+
+/*
+Shorthand for transition is
+transition: property-name(which we wish to change) | duration| timing-function| delay;
+
+ multiple transition property can be applied by separating it with comma
+ e.g:
+transition: background-color 1s ease-in 0.2s, 2s ease-in-out 0.5s;
+
+
+HElps in creating animation
+*/
+/*Initial state of div*/
+#div_transition{
+               height: 200px;       
+               width: 200px;
+               background-color: rgba(60, 210, 50,0.5);
+               transition-duration: 2s;/*(Ek state se dusre state of same element janey mei 
+               kitna time lgna chahiye)*/
+               transition-delay: 3s;/*(state ko kuch delay k baad change krane k liy or we 
+               can also set it as to change in state should be immediately)*/
+               
+
+}
+/*2nd state of div*/
+#div_transition:hover{
+               background-color: rgba(0,0,0);
+               border-radius: 50%;
+}
+
+
+/*initial state of transition_test*/
+#transition_test{
+
+               height: 100px;       
+               width: 100px;
+               background-color: rgba(60, 210, 50,0.5);
+               margin:0 auto;/*technique to centeralize the element*/
+               margin-top: 20px;
+               transition: background-color 1s ease-in 1s,margin-top 2s ease-in-out 6s;
+}
+/*2nd state of transition_test*/
+#transition_test:hover{
+               margin-top:200px;
+               background-color: #ffa511;
+}

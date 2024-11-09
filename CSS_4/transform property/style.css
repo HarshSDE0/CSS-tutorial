@@ -1,0 +1,206 @@
+
+section{
+               margin-top: 100px;
+}
+section div{
+               width: 200px;
+               height: 50px;
+               text-align: center;
+               background-color: #7aa874;
+               border: 2px solid black;
+               margin: 10px;
+               /* transition: transform 2s ease-in 1s;  for seeing this effect add
+                pseudo class to 2nd state of the element*/
+}
+div:nth-of-type(2n){
+               background-color: #f7db6a;
+}
+div:nth-of-type(3n){
+               background-color: #ebb02d;
+}
+/*transform*/
+/*
+Transform
+
+this property lets us rotate, scale, skew or translate an element
+
+
+units of rotation can be rad or turns or deg(most preffered)
+
+transform : rotate(45deg); (+ve  values of degree rotate the element in clockwise)
+transform : rotate(0.785rad);
+transform : rotate(0.785turn);
+transform : rotateX(deg);
+transform : rotateY(deg);
+transform : rotateZ(deg);
+
+it also take negative angle as its argument
+if transform: rotate(90deg) then the element will become vertical
+
+for rotating the element combletely : rotate element by 180deg
+
+
+
+*/
+#one{
+               transform:rotate(45deg);
+}
+/*transform: scale() can be applied in 2D as well as 3D
+transform : scale(0.5)   (this means the elements size will be reduced to half
+                              of it's original size in 
+                              in all direction)
+transform : scale(x, y);
+transform : scaleX(x);
+transform : scaleY(y);
+
+small x and y represents value of scaling in particular direction
+*/
+#two{
+               transform: scale(0.5);
+}
+
+/*
+transform : translate (x, y ) translation(movieng the element) by x-unit along x-axis & 
+                              translation(movieng the element) by y-unit along y-axis
+e.g; transform : translate(50px, 55px);
+this property moves the element in particular direction.
+This property is only applicable for 2D not for 3D
+transform : translateX(x)  translation only along x-axis
+transform : translateY(y)  translation only along y-axis
+
+small x and y represents value of translation in particular direction
+units used are 
+we can also pass negative values as arguments
+1)px
+2)em           
+3)rem
+*/
+#third{
+               transform: translate(250px, 90px);
+}
+
+/* skew ka matlab hota hai element ko particular direction mei pakad kar kheechna
+jiske wjh se element bend ho jata hai
+transform : skew(30deg)
+transform : skewX(30deg)
+transform : skewY(30deg)
+
+allowed units : 1)deg
+                2)rad
+                3)turns
+if we give property transform: skew(-90deg); or transform: skew(90deg);  this means
+that the element will become a point 
+
+*/
+#forth{
+               transform: skew(30deg);
+}
+
+/*these transform propety can be applied together on an element*/
+#fifth{
+               transform: rotate(30deg) translateX(150px);
+}
+/*box-shadow
+jo bhi elements hotey hai webpage par saare box k form mei hotey hai...
+thda attracive look dene k liy (to give lil bit 3D effect) 
+and also agar ham elements ko page se thda upar dikhana chahte th box-shadow property use kr skte 
+un elements (boxes) ko shadow bhi diya ja skta hai
+this is done by using  
+box-shadow: h-shadow v-shadow blur-radius spread-radius color inset;
+It adds shadow effect around the boundary of the element
+
+h-shadow : horizontal distance of shadow from the element(x-offset)
+
+v-shadow : vertical  distance of shadow from the element(y-offset)
+
+
+blur-radius : blur radius
+
+   The blur radius controls how dense the blur is,
+    that is, the higher the radius, the denser the blur. 
+    A blur of 0 px means no blur. 
+    More the blur radius , more the shadow will be denser and appear at distance
+    For blur behind, a radius of 20 px creates a good depth of field effect,
+     while a background blur radius of 80 px creates a good frosted glass effect.
+
+spread-radius : spread radius(Positive values will cause the shadow to expand and
+               grow bigger, negative values will cause the shadow to shrink.)
+color : color of shadow
+
+inset (optional): if we want to apply shadow inside the box then we use inset
+Changes the shadow from an outer box-shadow to an inner box-shadow
+ (as if the content is pressed into the box). 
+ Inset shadows are drawn inside the box's border (even if the border is transparent)
+ , and they appear above the background but below the content.
+  By default, the shadow behaves like a drop shadow,
+   giving the appearance that the box is elevated above its content. 
+   This is the default behavior when inset is not specified.
+
+
+
+*/
+#div_box_shadow{
+               width: 200px;
+               height: 200px;
+               text-align: center;
+               background-color: #a3c49f;
+               margin: 50px;
+               box-shadow: 2px 2px 25px 5px black;
+}
+
+/*background-image
+jaise ham kisi bhi element ke background mei color de skte hai
+waise hi
+ham kisi bhi element ke background mei image de skte hai
+iske liy ham "backgound-image" property ka use krte hai
+background-image:url("");
+
+
+jb bhi koi image download krke background mei set kr rhe hai ya uski actual 
+link use krke background mei set kr rhe hai th jruri nii hai ki wh hmare 
+element mei fit-in ho jaye proper tarike se(wh image bahut jayda zoom-in ho skta hai,etc)
+hamne iske liy "background-size" property ka use kiya hai
+background-size:cover;(It is the mostly used one because this  won't be 
+                              left with any empty spots in your div 
+                         iska matlab ye hai ki ham image ko crop krke set krenge
+                        iska matlab scaling krna nahi hota hai...sirf crop hota hai
+)
+background-size:contain;(contain ka matlab hota hai ki ham na th image crop krenge
+                         na th scale krke bada chhota krenege
+                         jst image ko repeat krwa denge)
+background-size : auto;(default value
+     ish case mei image strech out ho kr elment k background mei fit hogi
+)
+background-size : width height;
+background-size:100% 100%;(background-size:cover; 
+                    means the background image will always fit the whole div ,
+                     you . background-size:100% 100%; won't leave any empty space 
+                     too, but of course this
+                      will destroy the original image aspect ratio.)
+background-size:50% 50%;
+background-size:50% auto;
+
+
+*/
+/*for downloading copyright free images use "unsplash websit"*/
+#div_background_image{
+     width: 400px;
+     height:200px;
+     background-color: greenyellow;
+     margin: 10px auto;
+     background-image:url("./photo-1531297484001-80022131f5a1.avif") ;
+     background-size: cover;
+     color: white;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     text-align: center ;
+     font-style:italic;
+     font-weight: 500;
+     transition: text 1s ease-in 1s;
+}
+/*text-transform property let us to capitalize , convert the lower case to upper
+case or vice-versa*/
+#div_background_image:hover{
+     text-transform:uppercase;
+}
+
+

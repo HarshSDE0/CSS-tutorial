@@ -1,0 +1,31 @@
+/*initial state*/
+.card{
+               width: 150px;
+               height: 225px;
+               margin:20px;
+               display: inline-block;
+               border:2px solid black;
+               border-radius: 5px;
+               box-shadow:0px 4px 8px 0px rgba(0, 0, 0, 0.558) ;
+               transition: box-shadow 1s ease 0.5s, transform 1s ease 0.2s;
+
+}
+/*Note whenever giving curve to elements then also curve the inner elements 
+that is directly attached to it's boundary
+otherwise it will not look good*/
+img{
+               height: 50%;
+               width: 100%;
+               border-radius: 4px 4px 0px 0px;
+}
+.desc{
+               padding-left:2px;
+               padding-right:2px;
+}
+/*2nd state*/
+.card:hover{
+               box-shadow: 0px 8px 25px 0px rgb(72, 2, 2);
+               transform:scale(1.01);
+               cursor: pointer;
+               
+}
